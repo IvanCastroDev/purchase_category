@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_category" model="ir.ui.view">
+        <field name="name">purchase.category.view</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//field[@name="currency_id"]' position='after'>
+                <field name="purchase_category_read_only_in_form" invisible="True"/>
+                <field name="purchase_category" invisible="state != 'purchase'" readonly="purchase_category_read_only_in_form == True"/> <!-- Aquí utilizamos el campo creado para computar el readonly -->
+            </xpath>
+        </field>
+    </record>
+</odoo>

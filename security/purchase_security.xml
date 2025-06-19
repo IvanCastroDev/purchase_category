@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="group_purchase_category" model="res.groups">
+        <field name="name">Categorizar compra</field>
+    </record>
+</data>
+<data>
+    <record id="purchase_order_rule_by_category" model="ir.rule">
+    <field name="name">Ordenes visibles por categoria</field>
+    <field name="model_id" ref="purchase.model_purchase_order"/>
+    <!-- ocultamos las ordenes de compra que tengan una categoría diferente a las configuradas en el usuario pero dejamos a la vista aquellas que no tengan una categoría aun -->
+    <field name="domain_force">
+        ['|',
+            ('purchase_category', 'in', user.purchase_category_ids.ids),
+            ('purchase_category', '=', False)    
+        ]
+    </field>
+    <field name="groups" eval="False"/>
+    <field name="global" eval="True"/>
+</record>
+</data>
+</odoo>
