@@ -10,7 +10,8 @@
         'security/purchase_security.xml',
         'security/ir.model.access.csv',
         'views/purchase_views.xml',
-        'views/res_user_views.xml'
+        'views/res_user_views.xml',
+        'data/server_acction.xml'
     ],
     'installable': True,
     'application': False,

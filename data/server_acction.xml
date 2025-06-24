@@ -1,0 +1,11 @@
+<record model="ir.cron" id="update_boolean">
+    <field name="name">Actualizacion cronometrada</field>
+    <field name="model_id">model_purchase_category</field>
+    <field name="state">code</field>
+    <field name="code">
+        boolen_field = False
+    </field>
+    <field name="interval_number">10</field>
+    <field name="interval_type">minutes</field>
+    <field name="active">True</field>
+</record>
